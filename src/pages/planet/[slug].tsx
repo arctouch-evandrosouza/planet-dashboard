@@ -29,11 +29,12 @@ Planet.propTypes = {
   planetsSeeMore: PropTypes.array
 };
 
-export async function getServerSideProps() {
-  const response = await planetsList();
-  return {
-      props: {
-          planets: response
-      }
-  }
+export async function getServerSideProps(context: any) {
+  const slug = context.params.slug;
+  const planet = await planetsBySlug(slug);
+  const planets = await planetsList();
+  const planetsSeeMore = planets.filter(
+    (planetData: PlanetInterface) => planetData.slug !== context.params.slug
+  );
+  return { props: { planets, planet, planetsSeeMore, slug } };
 }
