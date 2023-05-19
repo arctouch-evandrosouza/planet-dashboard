@@ -2,7 +2,7 @@
 
 
 const planetsList = async () => {
-    const url = 'http://localhost:3000/api/planets';
+    const url = 'https://planet-dashboard.vercel.app/api/planets';
     const res = await fetch(url)
     const data = await res.json()
   
@@ -13,7 +13,7 @@ const planetsList = async () => {
   }
 
 const planetsBySlug = async (slug:string) => {
-    const url = `http://localhost:3000/api/planet/${slug}`;
+    const url = `https://planet-dashboard.vercel.app/api/planet/${slug}`;
     const res = await fetch(url)
     const data = await res.json()
   
