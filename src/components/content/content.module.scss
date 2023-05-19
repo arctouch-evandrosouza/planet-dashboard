@@ -1,0 +1,23 @@
+@use "../../styles/styles.scss";
+
+@use "@/styles/colors";
+@use "@/styles/configs";
+@use "@/styles/mixins";
+
+.content {
+  width: 100%;
+  box-shadow: 0px 1px 3px #ccc;
+  @include mixins.block(configs.$border-radius);
+}
+
+@media only screen and (max-width: 720px) {
+  .content {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: configs.$space-2;
+
+    canvas {
+      display: flex;
+    }
+  }
+}

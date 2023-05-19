@@ -1,0 +1,65 @@
+@use '../../styles/styles.scss';
+
+@use "@/styles/colors";
+@use "@/styles/configs";
+@use "@/styles/mixins";
+
+
+.banner {
+    display: block;
+    background: #ddd;
+     
+    @include mixins.block(); 
+  
+    input {
+      width: 300px;
+      padding: configs.$space-1;
+      font-size: configs.$space-2;
+      border-radius: configs.$space-4;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #cfcfcf;
+    }
+
+    span {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  .banner__logo {
+    text-decoration: none;
+    color: black;
+  }
+  .banner__logo:hover  {
+    color: colors.$link-background-active;
+  }
+  
+  .banner__wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .banner__mobile-menu {
+    display: none;
+    padding: configs.$space-1;
+    text-align: center;
+    font-size: configs.$space-3;
+    cursor: pointer;
+  }
+
+@media only screen and (max-width: 720px) { 
+  
+    .banner__wrap {
+      display: block;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .banner__mobile-menu {
+      display: block;
+    }
+}

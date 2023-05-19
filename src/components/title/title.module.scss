@@ -1,0 +1,8 @@
+@use '../../styles/styles.scss';
+
+@use "@/styles/mixins";
+@use "@/styles/configs";
+
+.title {
+    @include mixins.title(configs.$space-2);
+  }

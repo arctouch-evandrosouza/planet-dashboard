@@ -1,0 +1,36 @@
+@use "../../styles/styles.scss";
+
+@use "@/styles/colors";
+@use "@/styles/configs";
+@use "@/styles/mixins";
+
+.sidebar {
+  width: 300px;
+  background: colors.$sidebar-background;
+  @include mixins.block();
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: block;
+  }
+
+  ul li a {
+    display: block;
+    padding: configs.$space-1;
+    text-decoration: none;
+    border-radius: configs.$space-4;
+    background-color: colors.$link-background;
+    margin-bottom: configs.$space-4;
+    color: colors.$dark;
+  }
+
+  ul > li > a:hover,
+  ul > li > a.active {
+    background-color: colors.$link-background-active;
+  }
+}

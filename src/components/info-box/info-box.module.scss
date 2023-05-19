@@ -1,0 +1,28 @@
+@use "../../styles/styles.scss";
+
+@use "@/styles/configs";
+
+.info-box {
+  width: 100px;
+  padding: configs.$space-1;
+  border-radius: configs.$space-2;
+  border: 2px solid #ddd;
+  background: #fafafa;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  .info-box__title {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: configs.$space-4;
+  }
+  i {
+    font-size: configs.$space-3;
+    margin-bottom: configs.$space-4;
+  }
+  span.info-box__value {
+    font-size: configs.$space-1;
+  }
+}

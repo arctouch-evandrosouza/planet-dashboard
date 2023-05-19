@@ -1,0 +1,24 @@
+@use "../../styles/styles.scss";
+
+@use "@/styles/configs";
+
+.info {
+  display: flex;
+  gap: configs.$space-1;
+  grid-template-columns: auto auto auto;
+}
+
+.info_blocks {
+  display: grid;
+  gap: configs.$space-1;
+  grid-template-columns: auto auto auto;
+  box-sizing: content-box;
+}
+
+
+
+@media only screen and (max-width: 720px) {
+  .info {
+    display: block;
+  }
+}

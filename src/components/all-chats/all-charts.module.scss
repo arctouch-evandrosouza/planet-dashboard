@@ -1,0 +1,10 @@
+@use "../../styles/styles.scss";
+@use "@/styles/configs";
+
+.row {
+    display: flex;
+    padding-bottom: configs.$space-2;
+    gap: configs.$space-2 configs.$space-2;
+    align-content: space-around;
+    justify-content: space-evenly
+} 
