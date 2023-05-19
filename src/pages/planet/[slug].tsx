@@ -29,30 +29,11 @@ Planet.propTypes = {
   planetsSeeMore: PropTypes.array
 };
 
-export async function getStaticProps(context: any) {
-  const slug = context.params.slug;
-  const planets = await planetsList();
-  const planet = await planetsBySlug(slug);
-
-  const planetsSeeMore = planets.filter(
-    (planetData: PlanetInterface) => planetData.slug !== context.params.slug
-  );
-
-  return { props: { planets, planet, planetsSeeMore, slug } };
-}
-
-export async function getStaticPaths() {
-  let planets = await planetsList();
-  planets = planets.map((planet: any) => {
-    return {
-      params: {
-        slug: planet.slug,
-      },
-    };
-  });
-
+export async function getServerSideProps() {
+  const response = await planetsList();
   return {
-    paths: planets,
-    fallback: true,
-  };
+      props: {
+          planets: response
+      }
+  }
 }
